@@ -4,7 +4,12 @@ const props = defineProps({
 	descAi: String,
 	itemId: String,
 	imgSrc: String,
+	painPoints: Array,
+	unmetNeeds: Array,
+	goals: Array,
 });
+import List from '../components/List.vue';
+
 </script>
 
 <template>
@@ -14,6 +19,9 @@ const props = defineProps({
 			<h3 id="title">{{ title }}</h3>
 		</span>
 		<p v-if="descAi">{{ descAi }}</p>
+		<List color="orangered" listName="Unmet Needs" :list="unmetNeeds" />
+		<List color="darkred" listName="Pain Points" :list="painPoints" />
+		<List color="darkgreen" listName="Goals" :list="goals" />
 		<RouterLink :to="itemId">
 			<button>Read more about {{ title }}</button>
 		</RouterLink>
@@ -27,6 +35,7 @@ article {
 	display: flex;
 	flex-direction: column;
 	border-radius: 0.5rem;
+	height: min-content;
 }
 #title {
 	margin: 0;
