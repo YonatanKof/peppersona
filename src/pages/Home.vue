@@ -20,6 +20,7 @@ onMounted(() => {
 			v-if="itemData"
 			v-for="item in itemData"
 			:title="item.properties.Name.title[0].plain_text"
+			:imgSrc="item.properties.Image.files[0]?.file.url ?? ''"
 			:descAi="item.properties['Auto Description']?.rich_text[0]?.plain_text ?? ''"
 			:itemId="`/persona/${item.id}`"
 		/>
@@ -28,7 +29,17 @@ onMounted(() => {
 <style scoped>
 main {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+}
+@media (width <= 960px) {
+	main {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (width <= 640px) {
+	main {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 </style>
