@@ -3,7 +3,8 @@
 	font-size: 16px;
 	line-height: 1.2;
 	font-weight: 400;
-	--color-brand-100: #83B30C;
+	--color-brand-100: #5d8009;
+	--color-brand-80: #83b30c;
 	--color-system-100: hsl(0, 0%, 5%);
 	--color-system-80: hsl(0, 0%, 15%);
 	--color-system-60: hsl(0, 0%, 35%);
@@ -47,7 +48,8 @@ main {
 		grid-template-columns: 1fr;
 	}
 }
-.btn, button {
+.btn,
+button {
 	background-color: var(--color-system-invert-100);
 	color: var(--color-system-80);
 	border-radius: 8px;
@@ -120,6 +122,8 @@ p {
 }
 @media (prefers-color-scheme: dark) {
 	:root {
+		--color-brand-100: hsl(78, 88%, 45%);
+		--color-brand-80: hsl(77, 87%, 38%);
 		--color-system-100: hsl(0, 0%, 95%);
 		--color-system-80: hsl(0, 0%, 80%);
 		--color-system-60: hsl(0, 0%, 60%);
